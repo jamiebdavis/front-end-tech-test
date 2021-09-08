@@ -4,9 +4,9 @@ import SearchProvider from "../components/Search/SearchProvider";
 
 export default function Home() {
     return (
-        <div>
+        <div className="m-auto w-1/2 p-1">
             <SearchProvider>
-                <div>home Component</div>
+
                 <Search />
             </SearchProvider>
         </div>
