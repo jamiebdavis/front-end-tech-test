@@ -6,7 +6,7 @@ export const SearchContext = createContext();
 
 export default function SearchProvider({ children }) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [results, setResults] = useState(["Manchester", "Leeds", "Bath"]);
+    const [results, setResults] = useState([]);
     const [numberOfResults, setNumberOfResults] = useState(5);
 
     const fetchResults = e => {
@@ -16,7 +16,7 @@ export default function SearchProvider({ children }) {
             )
             .then(res => {
                 // handle success
-                console.log(res.data.results.docs);
+                setResults(res.data.results.docs);
             })
             .catch(error => {
                 // handle error
