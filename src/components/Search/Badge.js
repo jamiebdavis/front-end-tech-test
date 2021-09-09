@@ -1,5 +1,37 @@
 import React from "react";
+import classNames from "classnames";
+
+/* badge a = airport, s = station?? c = city */
+
+const badges = {
+    C: {
+        backgroundColor: "bg-blue-600",
+        textColor: "text-white",
+
+        text: "City",
+    },
+    T: {
+        backgroundColor: "bg-blue-600",
+        textColor: "text-white",
+        text: "Station",
+    },
+    A: {
+        backgroundColor: "bg-yellow-500",
+        textColor: "text-black",
+        text: "Airport",
+    },
+};
 
 export default function Badge({ badgeType }) {
-    return <span className="bg-blue-600 text-white py-0.5 px-8 rounded-md">City</span>;
+    return (
+        <div
+            className={classNames(
+                "rounded-md w-20 h-6 m-1 pt-0.5 text-center text-sm font-semibold",
+                badges[badgeType].textColor,
+                badges[badgeType].backgroundColor
+            )}
+        >
+            <span>{badges[badgeType].text}</span>
+        </div>
+    );
 }
