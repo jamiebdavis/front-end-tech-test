@@ -20,7 +20,7 @@ export default function Card() {
     }
 
     return (
-        <div className="mt-2 w-full border-2 border-indigo-600">
+        <div className="w-11/12 m-auto border-2 bg-white rounded shadow-lg">
             <ul>{suggestions}</ul>
         </div>
     );
