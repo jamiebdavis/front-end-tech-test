@@ -3,7 +3,7 @@ import { SearchContext } from "./SearchProvider";
 import Suggestion from "./Suggestion";
 
 export default function Card() {
-    const { results } = React.useContext(SearchContext);
+    const { results, searchTerm } = React.useContext(SearchContext);
 
     const suggestions = results.map(result => (
         <Suggestion
@@ -15,8 +15,12 @@ export default function Card() {
         />
     ));
 
+    if (searchTerm.length > 1 && !results) {
+        return <p>No results found</p>;
+    }
+
     return (
-        <div>
+        <div className="mt-2 w-full border-2 border-indigo-600">
             <ul>{suggestions}</ul>
         </div>
     );
