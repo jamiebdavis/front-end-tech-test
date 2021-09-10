@@ -1,0 +1,25 @@
+/* Styles not found on tailwind */
+
+/* Dimensions */
+.booking-background-height {
+    height: 636px;
+}
+
+/* Colours */
+.bg-booking-blue {
+    background-color: #1879ca;
+}
+.bg-booking-yellow {
+    background-color: #ffb700;
+}
+
+/* Font */
+.text-booking-title {
+    font-size: 32px;
+    line-height: 2.5rem;
+}
+
+.text-booking-subtitle {
+    font-size: 20px;
+    line-height: 1.75rem;
+}
