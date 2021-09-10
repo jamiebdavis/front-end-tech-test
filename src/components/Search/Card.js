@@ -15,8 +15,14 @@ export default function Card() {
         />
     ));
 
-    if (searchTerm.length > 1 && !results) {
-        return <p>No results found</p>;
+    if (results[0].name === "No results found") {
+        return (
+            <div className="w-11/12 m-auto border-2 bg-white rounded shadow-lg">
+                <ul>
+                    <li className="p-2">No results found.</li>
+                </ul>
+            </div>
+        );
     }
 
     return (

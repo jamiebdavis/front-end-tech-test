@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import Card from "./Card";
 import { SearchContext } from "./SearchProvider";
@@ -6,14 +6,9 @@ import { SearchContext } from "./SearchProvider";
 export default function Search() {
     const { setSearchTerm, searchTerm, results } = useContext(SearchContext);
 
-    const [input, setInput] = useState("");
-
     const handleChange = e => {
-        setInput(e.target.value);
-        setSearchTerm(input);
+        setSearchTerm(e.target.value);
     };
-
-    console.log(results);
 
     return (
         <div className="w-full bg-blue-500 h-96">
@@ -24,11 +19,11 @@ export default function Search() {
                 <h3 className="font-bold ml-3 text-lg p-4">Let's find your ideal car</h3>
                 <div data-testid="search-box" className="w-11/12 m-auto">
                     <input
-                        onChange={handleChange}
+                        onChange={e => handleChange(e)}
                         name="search"
-                        value={input}
+                        value={searchTerm}
                         placeholder="Pick-up Location"
-                        className="border-0 rounded w-full p-4 bg-fixed"
+                        className="border-0 rounded w-full p-4 font-bold text-lg"
                         aria-label="Pick-up Location"
                     />
                     {/* <img
@@ -38,8 +33,7 @@ export default function Search() {
                     /> */}
                 </div>
 
-                {/* TODO: Conditionally render card */}
-                {results && (
+                {results.length > 0 && searchTerm.length > 1 && (
                     <div data-testid="card">
                         <Card />
                     </div>

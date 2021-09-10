@@ -5,10 +5,7 @@ export default function Suggestion({ index, badge, title, subTitle, country }) {
     return (
         <li key={index}>
             <div className="flex p-4 hover:bg-blue-50">
-                <div
-                    className="flex-initial p-2
-                "
-                >
+                <div className="flex-initial p-2 ">
                     <span>
                         <Badge badgeType={badge} />
                     </span>

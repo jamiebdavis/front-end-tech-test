@@ -7,7 +7,7 @@ export const SearchContext = createContext();
 export default function SearchProvider({ children }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [results, setResults] = useState([]);
-    const [numberOfResults, setNumberOfResults] = useState(5);
+    const [numberOfResults, setNumberOfResults] = useState(6);
 
     const fetchResults = e => {
         axios
@@ -15,17 +15,15 @@ export default function SearchProvider({ children }) {
                 `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${numberOfResults}&solrTerm=${searchTerm}`
             )
             .then(res => {
-                // handle success
                 setResults(res.data.results.docs);
             })
             .catch(error => {
-                // handle error
                 console.log(error);
             });
     };
 
     useEffect(() => {
-        if (searchTerm.length < 1) return;
+        if (searchTerm.length < 2) return;
         fetchResults();
     }, [searchTerm]);
 
