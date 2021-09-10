@@ -11,33 +11,37 @@ export default function Search() {
     };
 
     return (
-        <div className="w-full bg-blue-500 h-96">
-            <h1 className="mb-6 text-center text-3xl text-white font-bold" data-testid="page-title">
-                Car Hire – Search, Compare &amp; Save
-            </h1>
-            <div className="w-11/12 bg-yellow-400 h-60 rounded m-auto">
-                <h3 className="font-bold ml-3 text-lg p-4">Let's find your ideal car</h3>
-                <div data-testid="search-box" className="w-11/12 m-auto">
-                    <input
-                        onChange={e => handleChange(e)}
-                        name="search"
-                        value={searchTerm}
-                        placeholder="Pick-up Location"
-                        className="border-0 rounded w-full p-4 font-bold text-lg"
-                        aria-label="Pick-up Location"
-                    />
-                    {/* <img
-                        src="https://img.icons8.com/windows/32/000000/car.png"
-                        alt="search input"
-                        className="absolute top-48 h-8 w-8 left-28"
-                    /> */}
-                </div>
+        <div className="w-full bg-booking-blue booking-background-height md:h-44 h-72">
+            <div className="py-1 px-1">
+                <h1
+                    className="mb-6 text-center text-booking-title text-white font-bold"
+                    data-testid="page-title"
+                >
+                    Car Hire – Search, Compare &amp; Save
+                </h1>
+                <div className="w-11/12 bg-booking-yellow h-96 md:h-44 rounded-md m-auto">
+                    <div data-testid="search-container" className="py-1 px-1 m-4">
+                        <h3 className="font-bold text-booking-subtitle my-3">
+                            Let's find your ideal car
+                        </h3>
+                        <div data-testid="search-box" className="m-auto">
+                            <input
+                                onChange={e => handleChange(e)}
+                                name="search"
+                                value={searchTerm}
+                                placeholder="Pick-up Location"
+                                className="border-0 rounded w-full pl-12 p-4 font-bold text-lg"
+                                aria-label="Pick-up Location"
+                            />
+                        </div>
 
-                {results.length > 0 && searchTerm.length > 1 && (
-                    <div data-testid="card">
-                        <Card />
+                        {results.length > 0 && searchTerm.length > 1 && (
+                            <div data-testid="card">
+                                <Card />
+                            </div>
+                        )}
                     </div>
-                )}
+                </div>
             </div>
         </div>
     );

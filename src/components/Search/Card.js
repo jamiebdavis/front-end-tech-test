@@ -12,12 +12,13 @@ export default function Card() {
             badge={result.placeType}
             subTitle={result.region}
             country={result.country}
+            airport={result.iata}
         />
     ));
 
     if (results[0].name === "No results found") {
         return (
-            <div className="w-11/12 m-auto border-2 bg-white rounded shadow-lg">
+            <div className="border-2 bg-white rounded shadow-lg">
                 <ul>
                     <li className="p-2">No results found.</li>
                 </ul>
@@ -26,7 +27,7 @@ export default function Card() {
     }
 
     return (
-        <div className="w-11/12 m-auto border-2 bg-white rounded shadow-lg">
+        <div className=" border-2 bg-white rounded shadow-lg">
             <ul>{suggestions}</ul>
         </div>
     );
