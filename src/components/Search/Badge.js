@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-const badges = {
+export const badges = {
     C: {
         backgroundColor: "bg-blue-600",
         textColor: "text-white",
@@ -24,12 +24,13 @@ const badges = {
     },
 };
 
-const badgeArray = ["C", "T", "A", "D"];
+export const badgeArray = ["C", "T", "A", "D"];
 
 export default function Badge({ badgeType }) {
     if (badgeArray.includes(badgeType)) {
         return (
             <div
+                data-testid="badge"
                 className={classNames(
                     "rounded w-16 h-6  pt-1 text-center text-xs font-semibold",
                     badges[badgeType].textColor,
