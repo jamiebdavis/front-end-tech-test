@@ -32,3 +32,17 @@ Will build and serve the project.
 The majority of css used in the project was Tailwindcss. 
 I have added a few customer css classes for a few things i couldnt find in tailwind.
 
+## To do
+
+List of things i still need to do but ran out of time. 
+- TESTS
+   - Test api calls and how components handle diffent outcomes. 
+   - Test search context
+- Minor css tweaks on suggestions
+
+## Feedback & Questions
+
+If you have any questions or would like to provide feedback, please feel free to contact me via email\
+jamiebarrydavis@gmail.com\
+\
+Thanks
