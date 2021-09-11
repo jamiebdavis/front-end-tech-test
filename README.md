@@ -1,8 +1,9 @@
-# Tech test for booking.com
+# Tech test for booking.com!\ [screenshot](https://user-images.githubusercontent.com/26900251/132957824-9ed56aa9-ef89-4dc1-bf32-1b4b90c043ca.jpg)
+
 
 ### `Hosting`
 
-The web app is hosted on AWS Amplify. Please find the link below.
+The web app is hosted on AWS Amplify. Please find the link below.\
 https://main.d2f9o5mvr9q88j.amplifyapp.com/
 
 ## Running the app
@@ -20,11 +21,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-Test library used was React testing library
+Launches the test runner in the interactive watch mode.
+Test library used was React testing library.
 
 ### `npm build`
-Will build and serve the project
+Will build and serve the project.
 
 ## CSS architecture
 
