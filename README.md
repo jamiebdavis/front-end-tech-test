@@ -45,4 +45,4 @@ List of things i still need to do but ran out of time.
 If you have any questions or would like to provide feedback, please feel free to contact me via email\
 jamiebarrydavis@gmail.com\
 \
-Thanks
+Thanks for reading.
