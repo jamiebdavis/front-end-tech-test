@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 
-/* C = city, T = station,  A = airport */
 const badges = {
     C: {
         backgroundColor: "bg-blue-600",
@@ -25,9 +24,10 @@ const badges = {
     },
 };
 
-const bagdeArrary = ["C", "T", "A", "D"];
+const badgeArray = ["C", "T", "A", "D"];
+
 export default function Badge({ badgeType }) {
-    if (bagdeArrary.includes(badgeType)) {
+    if (badgeArray.includes(badgeType)) {
         return (
             <div
                 className={classNames(

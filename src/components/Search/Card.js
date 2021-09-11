@@ -3,7 +3,7 @@ import { SearchContext } from "./SearchProvider";
 import Suggestion from "./Suggestion";
 
 export default function Card() {
-    const { results, searchTerm } = React.useContext(SearchContext);
+    const { results } = React.useContext(SearchContext);
 
     const suggestions = results.map(result => (
         <Suggestion
