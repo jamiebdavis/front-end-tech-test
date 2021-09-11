@@ -7,7 +7,7 @@ export default function Header() {
                 className="text-center text-3xl bg-booking-blue text-white font-bold"
                 data-testid="page-title"
             >
-                Car Hire – Search, Compare &amp; Save
+                Car Hire – Search, Compare &amp; Save.
             </h1>
         </div>
     );

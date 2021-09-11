@@ -1,3 +1,10 @@
+#Tech test for booking.com
+
+### `Hosting`
+
+The web app is hosted on AWS Amplify. Please find the link below.
+https://main.d2f9o5mvr9q88j.amplifyapp.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -22,3 +29,5 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `CSS architecture and development.`
 
 ### `run your application and its tests locally.`
+
+### `instructions on how to build and serve it.`
