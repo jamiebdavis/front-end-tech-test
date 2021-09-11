@@ -7,24 +7,24 @@ export const SearchContext = createContext();
 export default function SearchProvider({ children }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [results, setResults] = useState([]);
-    const [numberOfResults, setNumberOfResults] = useState(6);
+    const [numberOfResults] = useState(6);
 
-    const fetchResults = e => {
-        axios
-            .get(
+    const fetchResults = async () => {
+        try {
+            const res = await axios.get(
                 `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${numberOfResults}&solrTerm=${searchTerm}`
-            )
-            .then(res => {
-                setResults(res.data.results.docs);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+            );
+            const data = await res.data.results.docs;
+            setResults(data);
+        } catch (error) {
+            console.log("error", error);
+        }
     };
 
     useEffect(() => {
         if (searchTerm.length < 2) return;
         fetchResults();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchTerm]);
 
     const contextValue = { results, searchTerm, setSearchTerm };
