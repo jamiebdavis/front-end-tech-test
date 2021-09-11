@@ -2,12 +2,13 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { render, screen } from "@testing-library/react";
 
+import Header from "../Header";
 import React from "react";
-import Search from "../Search";
 
-describe("<Search />", () => {
+describe("<Header />", () => {
     it("should render component", () => {
-        const { getByTestId } = render(<Search />);
-        expect(screen.getByTestId("search-box")).toBeInTheDocument();
+        render(<Header />);
+
+        expect(screen.getByText("Car Hire – Search, Compare & Save")).toBeInTheDocument();
     });
 });

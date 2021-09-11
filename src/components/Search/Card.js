@@ -18,7 +18,7 @@ export default function Card() {
 
     if (results[0].name === "No results found") {
         return (
-            <div className="border-2 bg-white rounded shadow-lg">
+            <div data-testid="no-results-card" className="border-2 bg-white rounded shadow-lg">
                 <ul>
                     <li className="p-2">No results found.</li>
                 </ul>
@@ -27,7 +27,7 @@ export default function Card() {
     }
 
     return (
-        <div className=" border-2 bg-white rounded shadow-lg">
+        <div data-testid="card" className="border-2 bg-white rounded shadow-lg">
             <ul>{suggestions}</ul>
         </div>
     );
