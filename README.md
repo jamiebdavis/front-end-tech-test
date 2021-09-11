@@ -1,4 +1,4 @@
-# Tech test for booking.com!\ [screenshot](https://user-images.githubusercontent.com/26900251/132957824-9ed56aa9-ef89-4dc1-bf32-1b4b90c043ca.jpg)
+# Tech test for booking.com [screenshot](https://user-images.githubusercontent.com/26900251/132957824-9ed56aa9-ef89-4dc1-bf32-1b4b90c043ca.jpg)
 
 
 ### `Hosting`
