@@ -20,11 +20,7 @@ export default function SearchBox() {
                         <SubTitle />
                         <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
 
-                        {results.length > 0 && searchTerm.length > 1 && (
-                            <div data-testid="card">
-                                <Card />
-                            </div>
-                        )}
+                        {results.length > 0 && searchTerm.length > 1 && <Card />}
                     </div>
                 </div>
             </div>

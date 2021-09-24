@@ -5,11 +5,9 @@ import SearchProvider from "../components/Search/SearchProvider";
 
 export default function Home() {
     return (
-        <div className="">
-            <SearchProvider>
-                <Header />
-                <SearchBox />
-            </SearchProvider>
-        </div>
+        <SearchProvider>
+            <Header />
+            <SearchBox />
+        </SearchProvider>
     );
 }
