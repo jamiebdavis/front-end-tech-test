@@ -8,17 +8,14 @@ import nock from "nock";
 import userEvent from "@testing-library/user-event";
 
 describe("<Home />", () => {
-    beforeEach(() => {});
+    beforeEach(() => render(<Home />));
     it("should render component", () => {
-        render(<Home />);
         expect(screen.getByTestId("search-container")).toBeInTheDocument();
         expect(screen.getByText("Let's find your ideal car")).toBeInTheDocument();
         expect(screen.getByTestId("search-box")).toBeInTheDocument();
     });
 
     it("should contain text entered into input field", () => {
-        render(<Home />);
-
         const searchInput = screen.getByRole("textbox", {
             name: "Pick-up Location",
         });
@@ -27,27 +24,45 @@ describe("<Home />", () => {
         expect(searchInput).toHaveValue("Manchester");
     });
 
-    // it.only("should display no results found if user enters 'abcd1234'", async () => {
-    //     const { getByRole, debug } = container;
+    it("should display card for search term 'ma'", async () => {
+        const searchTerm = "ma";
+        const numberOfResults = 6;
 
-    //     await userEvent.type(
-    //         getByRole("textbox", {
-    //             name: "Pick-up Location",
-    //         }),
-    //         "abcd123456"
-    //     );
+        const searchInput = screen.getByRole("textbox", {
+            name: "Pick-up Location",
+        });
 
-    //     nock("https://www.rentalcars.com")
-    //         .get(`/FTSAutocomplete.do?solrIndex=fts_en&solrRows=&6solrTerm=abcd123456`)
-    //         .reply(200, {
-    //             results: {
-    //                 docs: [{ name: "No results found" }],
-    //             },
-    //         });
+        await userEvent.type(searchInput, searchTerm);
 
-    //     await waitFor(() => {
-    //         expect(screen.getByTestId("card")).toBeInTheDocument();
-    //         debug();
-    //     });
-    // });
+        expect(searchInput).toHaveValue(searchTerm);
+
+        nock("https://www.rentalcars.com")
+            .get(
+                `/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${numberOfResults}&solrTerm=${searchTerm}`
+            )
+            .reply(200, {
+                results: {
+                    docs: [
+                        {
+                            country: "United Kingdom",
+                            city: "Manchester",
+                            searchType: "L",
+                            alternative: ["GB,UK,England,Manchester Airport"],
+                            index: 1,
+                            placeType: "A",
+                            iata: "MAN",
+                            name: "Manchester Airport",
+                            region: "Greater Manchester",
+                            lang: "en",
+                        },
+                    ],
+                },
+            })
+            .persist();
+
+        await waitFor(() => {
+            expect(screen.getByTestId("card")).toBeInTheDocument();
+            screen.debug();
+        });
+    });
 });
