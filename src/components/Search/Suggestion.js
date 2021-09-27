@@ -8,7 +8,7 @@ export default function Suggestion({ badge, title, subTitle, country, airport })
                 <Badge badgeType={badge} />
             </div>
             <div className="flex-1">
-                <p className="text-sm">
+                <p data-testid="suggestion-title" className="text-sm">
                     {title}
                     {airport ? ` (${airport})` : ""}
                 </p>
