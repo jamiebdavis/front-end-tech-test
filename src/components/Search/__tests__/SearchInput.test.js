@@ -8,6 +8,6 @@ import SearchInput from "../SearchInput";
 describe("<SearchInput />", () => {
     it("should contain correct label", () => {
         render(<SearchInput />);
-        screen.getByLabelText("Pick-up Location");
+        expect(screen.getByLabelText("Pick-up Location")).toBeInTheDocument();
     });
 });
