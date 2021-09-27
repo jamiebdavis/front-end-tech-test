@@ -9,7 +9,6 @@ export default function Card() {
         <li key={result.index}>
             <Suggestion
                 title={result.name}
-                index={result.index}
                 badge={result.placeType}
                 subTitle={result.region}
                 country={result.country}

@@ -1,7 +1,7 @@
 import Badge from "./Badge";
 import React from "react";
 
-export default function Suggestion({ index, badge, title, subTitle, country, airport }) {
+export default function Suggestion({ badge, title, subTitle, country, airport }) {
     return (
         <div className="flex p-3 hover:bg-blue-50">
             <div className="flex-initial p-1.5 ">
